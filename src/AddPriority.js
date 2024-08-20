@@ -17,7 +17,7 @@ class AddPriority extends React.Component{
     }
 
     setPriority = () => {
-        this.props.togglePriority()
+        this.props.togglePriority(this.state.priorityValue)
         this.props.setNP(this.state.priorityValue)
         this.props.addPr(this.state.priorityValue, this.props.task.id)
     }

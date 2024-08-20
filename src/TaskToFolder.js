@@ -22,7 +22,7 @@ class TaskToFolder extends React.Component{
 
         const darkBack = {
             backgroundColor: this.props.dark? '#000' : '#fff',
-            border: '1px #fff solid'
+            border: this.props.dark? '1px #fff solid' : '1px #000 solid'
         }
 
         return(

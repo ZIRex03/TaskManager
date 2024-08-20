@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Tiny5&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -10,6 +16,22 @@ body{
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     color: #000;
+}
+
+body.tiny5{
+    font-family: 'Tiny5', sans-serif;
+}
+
+body.montserrat{
+    font-family: 'Montserrat', sans-serif;
+}
+
+body.pacifico{
+    font-family: 'Pacifico', sans-serif;
+}
+
+body.exo2{
+    font-family: 'Exo2', sans-serif;
 }
 
 body.dark{
@@ -323,6 +345,12 @@ body.dark{
     opacity: 0.5;
 }
 
+.add__folder button{
+    padding: 2px 5px;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
 .task__folder{
     position: absolute;
     z-index: 5;
@@ -351,6 +379,51 @@ body.dark{
     opacity: 0.5;
 }
 
+.input-folder{
+    padding: 2px 5px;
+    border-radius: 5px;
+}
+
+.a-theme{
+    margin-top: 5px;
+}
+
+.settings__fonts{
+    margin-top: 20px;
+}
+
+.fonts-input{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    column-gap: 50px;
+    row-gap: 10px;
+    margin-top: 15px;
+}
+
+.fonts-input input{
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+.p-Montserrat{
+    font-family: 'Montserrat';
+}
+
+.p-Pacifico{
+    font-family: 'Pacifico';
+}
+
+.p-Tiny5{
+    font-family: 'Tiny5';
+}
+
+.p-Exo2{
+    font-family: 'Exo2';
+}
+
+
+
 
 @media(max-width:930px){
 
@@ -361,6 +434,13 @@ body.dark{
     .burger-icon{
         display: initial;
         right: -120%;
+    }
+}
+
+@media(max-width: 440px){
+    .settings{
+        max-width: 370px;
+        margin-left: -20px;
     }
 }
 

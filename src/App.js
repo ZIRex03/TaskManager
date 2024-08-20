@@ -16,6 +16,7 @@ class App extends React.Component{
             complTasks: [],
             darkTheme: false,
             folders: [],
+            fonts: [],
         }
 
     }
@@ -34,6 +35,7 @@ class App extends React.Component{
         const storedTasks2 = localStorage.getItem('complTask');
         const setDark = localStorage.getItem('darkTheme');
         const setFolders = localStorage.getItem('hFolders');
+        const setFonts = localStorage.getItem('sFont');
         
         if (storedTasks) {
             // Парсим данные, если они существуют
@@ -53,6 +55,11 @@ class App extends React.Component{
         if (setFolders) {
             // Парсим данные, если они существуют
             this.setState({ folders: JSON.parse(setFolders)});
+        }
+
+        if (setFonts) {
+            // Парсим данные, если они существуют
+            this.setState({ fonts: JSON.parse(setFonts)});
         }
         
     }
@@ -137,8 +144,16 @@ class App extends React.Component{
 
         this.setState({darkTheme: updatedTheme});
         localStorage.setItem('darkTheme', JSON.stringify(updatedTheme));
+   
+    }
 
-        
+    setFonts = (currentFont) => {
+
+        const updatedFont = currentFont;
+
+        this.setState({fonts: updatedFont});
+
+        localStorage.setItem('sFont', JSON.stringify(updatedFont));
     }
 
     addPriority = (priorityValue, id) => {
@@ -200,6 +215,41 @@ class App extends React.Component{
 
     render(){
 
+        let currentFont;
+
+        switch(this.state.fonts){
+            case 'tiny-5':
+                currentFont = {
+                    fontFamily: 'Tiny5, sans-serif',
+                }
+                break;
+
+            case 'montserrat':
+                currentFont = {
+                    fontFamily: 'Montserrat, sans-serif',
+                }
+                break;
+
+            case 'pacifico':
+                currentFont = {
+                    fontFamily: 'Pacifico, sans-serif',
+                }
+                break;
+
+            case 'exo-2':
+                currentFont = {
+                    fontFamily: 'Exo2, sans-serif',
+                }
+                break;
+
+            default:
+                currentFont = {
+                    fontFamily: 'Montserrat, sans-serif',
+                }
+                break;
+        }
+        
+
         if (this.state.darkTheme) {
             this.darkList.forEach((el) => {
                 const element = document.querySelector(el);
@@ -217,13 +267,13 @@ class App extends React.Component{
             });
         }
 
+        
+
         return(
             
-            <div className="main__app">
+            <div style={currentFont} className="main__app">
 
-                
-                
-                <Header onDark = {this.onDark} darkTheme = {this.state.darkTheme}/>
+                <Header setFonts = {this.setFonts} onDark = {this.onDark} darkTheme = {this.state.darkTheme}/>
 
                 <div className="tasks__field">
 

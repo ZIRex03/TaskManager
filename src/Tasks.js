@@ -89,9 +89,32 @@ class Tasks extends React.Component{
         }
         else{
             return(
-                <div className="no__task">
-                    <p>Нет задач</p>
+
+                <div className="tasks">
+                    <div className="tasks__header">
+                        <div>
+                            <p className="tasks__p">Задачи</p>
+                            <select onChange={this.handleChange1}>
+                                <option value='all'>Все</option>
+                                {this.props.folders.map((el) => (
+                                    <option value={el.folder}>{el.folder}</option>
+                                ))}
+                            </select>
+                        </div>
+                        <div className="sort__div">
+                            <p>Сортировка</p>
+                            <select onChange={this.handleChange}>
+                                <option value='high'>По приоритету &darr;</option>
+                                <option value='low'>По приоритету &uarr;</option>
+                            </select>
+                        </div>
+                        
+                    </div>
+                    <div className="no__task">
+                        <p>Нет задач</p>
+                    </div>
                 </div>
+                
             )
         }
     }

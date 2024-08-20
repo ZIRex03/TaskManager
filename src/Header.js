@@ -23,7 +23,7 @@ class Header extends React.Component{
             <header className="header">
                 <h1 className="header__text">TaskManager</h1>
                 <CiSettings title="Settings" className="settings-icon" onClick={this.toggleSettings}/>
-                {this.state.openSettings && <Settings darkTheme = {this.props.darkTheme} onDark = {this.props.onDark}/>}
+                {this.state.openSettings && <Settings setFonts = {this.props.setFonts} darkTheme = {this.props.darkTheme} onDark = {this.props.onDark}/>}
             </header>
         )
     }

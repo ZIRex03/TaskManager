@@ -20,7 +20,7 @@ const AddTask = ({addTask}) => {
     return(
 
         <div className="task">
-            <input value={inputValue} className="add-task" onChange={handleInputChange}/>
+            <input placeholder="Добавить задачу..." value={inputValue} className="add-task" onChange={handleInputChange}/>
             <IoAddCircleOutline title="Add Task" className="add-task-icon" onClick={handleSave}/>
         </div>
     )
