@@ -3,7 +3,7 @@ import Header from "./Header";
 import AddTask from "./AddTask";
 import Tasks from "./Tasks";
 import ComplTasks from "./ComplTasks";
-import Aside from "./Aside";
+import Aside from "../Aside";
 
 
 class App extends React.Component{
