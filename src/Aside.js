@@ -61,7 +61,7 @@ class Aside extends React.Component{
         else{
             return(
 
-                <div className="aside">
+                <div style={backDark} className="aside">
 
                     <CiMenuBurger title="Add Folder Menu" className="burger-icon" onClick={this.openMenu}/>
 
