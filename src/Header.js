@@ -16,6 +16,7 @@ class Header extends React.Component{
         this.setState(prevState => ({
             openSettings: !prevState.openSettings
         }));
+
     };
 
     render(){

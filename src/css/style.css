@@ -220,7 +220,7 @@ body.dark{
     height: 400px;
     background-color: #fff;
     position: absolute;
-    z-index: 1;
+    z-index: 3;
     padding-inline: 40px;
 }
 
@@ -293,11 +293,24 @@ body.dark{
     margin-bottom: 20px;
 }
 
-.folders{
+.folders__current{
     display: flex;
     margin-left: 20px;
     margin-bottom: 15px;
     justify-content: space-between;
+}
+
+.folders{
+    margin-bottom: 30px;
+}
+
+
+.folder__task{
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 13px;
+    padding-left: 50px;
 }
 
 .tasks__field{
@@ -311,7 +324,7 @@ body.dark{
     background-color: #fff;
     transition: .5s;
     transform: translateX(-120%);
-    z-index: 1;
+    z-index: 4;
 }
 
 .aside.active{
@@ -353,7 +366,7 @@ body.dark{
 
 .task__folder{
     position: absolute;
-    z-index: 5;
+    z-index: 2;
     background-color: #fff;
     border: 2px #000 solid;
     width: 300px;
@@ -363,15 +376,33 @@ body.dark{
     margin-bottom: 20px;
 }
 
+.folder-icon{
+    cursor: pointer;
+}
+
 .folders__name{
     display: flex;
     column-gap: 10px;
+}
+
+.folders__name p{
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.folder__task-text{
+    display: flex;
+    column-gap: 3px;
 }
 
 .delete-folder-icon{
     width: 20px;
     height: 20px;
     margin-right: 10px;
+    cursor: pointer;
+}
+
+.delete_from_folder-icon{
     cursor: pointer;
 }
 
@@ -420,6 +451,11 @@ body.dark{
 
 .p-Exo2{
     font-family: 'Exo2';
+}
+
+.folders__name-icons{
+    display: flex;
+    flex-direction: column;
 }
 
 

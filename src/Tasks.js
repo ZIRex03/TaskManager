@@ -82,7 +82,7 @@ class Tasks extends React.Component{
                         
                     </div>
                     {sortedTasks.map((el) => (
-                        <Task toFolder ={this.props.toFolder} folders={this.props.folders} addPr = {this.props.addPr} dark = {this.props.dark} key={el.id} task = {el} onUpdateTask = {this.props.onUpdateTask} onComplete = {this.props.onComplete}/>
+                        <Task oFolder = {this.props.oFolder} isFolder = {this.props.isFolder} toFolder ={this.props.toFolder} folders={this.props.folders} addPr = {this.props.addPr} dark = {this.props.dark} key={el.id} task = {el} onUpdateTask = {this.props.onUpdateTask} onComplete = {this.props.onComplete}/>
                     ))}
                 </div>
             )

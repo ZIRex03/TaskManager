@@ -17,6 +17,7 @@ class App extends React.Component{
             darkTheme: false,
             folders: [],
             fonts: [],
+            addToFolder: false,
         }
 
     }
@@ -199,18 +200,34 @@ class App extends React.Component{
 
         const updatedFolder = this.state.folders.filter(el => el.folder !== folderName);
 
-        const updatedTask = this.state.tasks.map((el) => {
-            if(el.onFolder === folderName){
-                return {...el, onFolder: ''}
-            }
-            return el;
-        });
-
         this.setState({folders: updatedFolder});
-        this.setState({tasks: updatedTask});
 
         localStorage.setItem('hFolders', JSON.stringify(updatedFolder));
+
+        const updatedTask = this.state.tasks.map((task) => {
+            if(task.onFolder === folderName){
+                return {...task, onFolder: ''}
+            }
+            return task;
+        });
+
+        
+        this.setState({tasks: updatedTask});
         localStorage.setItem('taskText', JSON.stringify(updatedTask));
+    }
+
+    deleteFromFolder = (id) => {
+
+        const updatedTask = this.state.tasks.map(task => {
+            if(task.id === id){
+                return {...task, onFolder: ''}
+            }
+            return task;
+        });
+
+        this.setState({tasks: updatedTask});
+        localStorage.setItem('taskText', JSON.stringify(updatedTask));
+
     }
 
     render(){
@@ -273,15 +290,15 @@ class App extends React.Component{
             
             <div style={currentFont} className="main__app">
 
-                <Header setFonts = {this.setFonts} onDark = {this.onDark} darkTheme = {this.state.darkTheme}/>
+                <Header closeFolder = {this.closeToFolder} setFonts = {this.setFonts} onDark = {this.onDark} darkTheme = {this.state.darkTheme}/>
 
                 <div className="tasks__field">
 
-                    <Aside dark = {this.state.darkTheme} deleteFolder = {this.deleteFolder} onFolder = {this.addFolder} folders = {this.state.folders}/>
+                    <Aside deleteFromFolder = {this.deleteFromFolder} tasks = {this.state.tasks} dark = {this.state.darkTheme} deleteFolder = {this.deleteFolder} onFolder = {this.addFolder} folders = {this.state.folders}/>
 
                     <main>
                         <AddTask addTask = {this.addTask}/>
-                        <Tasks toFolder = {this.addToFolder} folders = {this.state.folders} addPr = {this.addPriority} dark = {this.state.darkTheme} tasks = {this.state.tasks} onUpdateTask = {this.onUpdateTask} onComplete = {this.completeTask}/>
+                        <Tasks isFolder = {this.isFolderOpen} toFolder = {this.addToFolder} folders = {this.state.folders} addPr = {this.addPriority} dark = {this.state.darkTheme} tasks = {this.state.tasks} onUpdateTask = {this.onUpdateTask} onComplete = {this.completeTask}/>
                         <ComplTasks dark = {this.state.darkTheme} complTasks = {this.state.complTasks} onDelete = {this.deleteTask} onReturn = {this.returnTask}/>
                     </main>
 

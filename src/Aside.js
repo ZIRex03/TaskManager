@@ -52,7 +52,7 @@ class Aside extends React.Component{
                     </div>
 
                     {this.props.folders.map((el)=>(
-                        <Folders delFolder = {this.props.deleteFolder} folders = {el}/>
+                        <Folders delFromFolder = {this.props.deleteFromFolder} tasks = {this.props.tasks} delFolder = {this.props.deleteFolder} folders = {el}/>
                     ))}
 
                 </div>

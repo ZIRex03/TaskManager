@@ -4,9 +4,9 @@ class Settings extends React.Component{
 
 
     toggleCheck = () => {
-        const newTheme = !this.props.darkTheme; // Получаем текущее значение темной темы
+        const newTheme = !this.props.darkTheme; 
         console.log(newTheme);
-        this.props.onDark(newTheme); // Передаем новое значение в App
+        this.props.onDark(newTheme); 
     };
 
     handleChange = (event) => {

@@ -35,12 +35,27 @@ class Task extends React.Component{
     }
 
     toggleEdit = () => {
+
+        if(this.state.setPriority){
+
+            this.setState(prevState => ({
+                setPriority: !prevState.setPriority
+            }));
+        }
+
         this.setState(prevState => ({
             editTask: !prevState.editTask
         }));
     };
 
     togglePriority = (txtPriority) => {
+
+        if(this.state.editTask){
+
+            this.setState(prevState => ({
+                editTask: !prevState.editTask
+            }));
+        }
 
         this.setState(prevState => ({
             setPriority: !prevState.setPriority
@@ -65,6 +80,19 @@ class Task extends React.Component{
     }
 
     toggleFolder = () => {
+
+        if(this.state.editTask){
+            this.setState(prevState => ({
+                editTask: !prevState.editTask
+            }));
+        }
+
+        if(this.state.setPriority){
+            this.setState(prevState => ({
+                setPriority: !prevState.setPriority
+            }));
+        }
+
         this.setState(prevState => ({
             toFolder: !prevState.toFolder
         }));
