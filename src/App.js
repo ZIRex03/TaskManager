@@ -114,7 +114,7 @@ class App extends React.Component{
 
     completeTask = (taskText, id) => {
 
-        let lastId = this.state.tasks.reduce((max, task) => (task.id > max ? task.id : max), 0);
+        let lastId = this.state.complTasks.reduce((max, task) => (task.id > max ? task.id : max), 0);
 
         const newTask ={
             id: lastId + 1,

@@ -59,7 +59,6 @@ body.dark{
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    text-align: center;
 }
 
 .settings-icon{
@@ -487,11 +486,6 @@ body.dark{
         padding-left: 40px;
     }
 
-    .header__text{
-        text-align: left;
-        margin-left: -30px;
-    }
-
     .settings{
         max-width: 350px;
         margin-left: -20px;
@@ -505,11 +499,6 @@ body.dark{
     .main__app{
         max-width: 350px;
         padding-left: 40px;
-    }
-
-    .header__text{
-        text-align: left;
-        margin-left: -10px;
     }
 
     .settings{
